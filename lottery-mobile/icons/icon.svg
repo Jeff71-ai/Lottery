@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29"/>
+      <stop offset="55%" style="stop-color:#302b63"/>
+      <stop offset="100%" style="stop-color:#24243e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffed4a"/>
+      <stop offset="50%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#d4a800"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  
+  <!-- 装饰光效 -->
+  <circle cx="150" cy="130" r="80" fill="#ffd700" opacity="0.1"/>
+  <circle cx="380" cy="400" r="100" fill="#ff6b6b" opacity="0.08"/>
+  
+  <!-- 抽奖视窗外框 -->
+  <rect x="96" y="120" width="320" height="180" rx="24" 
+        fill="rgba(255,255,255,0.05)" 
+        stroke="rgba(255,215,0,0.4)" 
+        stroke-width="4"
+        filter="url(#shadow)"/>
+  
+  <!-- 视窗上下渐变遮罩 -->
+  <rect x="100" y="124" width="312" height="50" rx="0" 
+        fill="url(#bg)" opacity="0.7"/>
+  <rect x="100" y="250" width="312" height="46" rx="0" 
+        fill="url(#bg)" opacity="0.7"/>
+  
+  <!-- 中间指示线 -->
+  <rect x="110" y="208" width="292" height="3" rx="1.5" 
+        fill="url(#gold)" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- 滚动的名字（装饰性） -->
+  <text x="256" y="218" text-anchor="middle" 
+        font-family="PingFang SC, Microsoft YaHei, sans-serif" 
+        font-size="42" font-weight="bold" 
+        fill="url(#gold)" filter="url(#glow)">
+    幸运
+  </text>
+  
+  <!-- 抽奖按钮 -->
+  <rect x="156" y="340" width="200" height="72" rx="36" 
+        fill="url(#gold)" filter="url(#shadow)"/>
+  <text x="256" y="388" text-anchor="middle" 
+        font-family="PingFang SC, Microsoft YaHei, sans-serif" 
+        font-size="32" font-weight="bold" fill="#1a1a2e">
+    抽奖
+  </text>
+  
+  <!-- 星星装饰 -->
+  <polygon points="256,56 264,80 288,82 270,98 276,122 256,108 236,122 242,98 224,82 248,80" 
+           fill="url(#gold)" filter="url(#glow)"/>
+</svg>
